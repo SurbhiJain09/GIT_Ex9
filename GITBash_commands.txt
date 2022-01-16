@@ -1,0 +1,178 @@
+
+surbh@DESKTOP-UQB074A MINGW64 ~/Desktop/GIT_Ex8 (master)
+$ cd ..
+
+surbh@DESKTOP-UQB074A MINGW64 ~/Desktop
+$ cd GIT_Ex9
+
+surbh@DESKTOP-UQB074A MINGW64 ~/Desktop/GIT_Ex9
+$ git init
+Initialized empty Git repository in C:/Users/surbh/Desktop/GIT_Ex9/.git/
+
+surbh@DESKTOP-UQB074A MINGW64 ~/Desktop/GIT_Ex9 (master)
+$ ls
+index.html
+
+surbh@DESKTOP-UQB074A MINGW64 ~/Desktop/GIT_Ex9 (master)
+$ git add .
+
+surbh@DESKTOP-UQB074A MINGW64 ~/Desktop/GIT_Ex9 (master)
+$ git commit -m "Commiting mndex.html on master branch"
+[master (root-commit) b9d69a7] Commiting mndex.html on master branch
+ 1 file changed, 9 insertions(+)
+ create mode 100644 index.html
+
+surbh@DESKTOP-UQB074A MINGW64 ~/Desktop/GIT_Ex9 (master)
+$ git branch my-feature
+
+surbh@DESKTOP-UQB074A MINGW64 ~/Desktop/GIT_Ex9 (master)
+$ git checkout my-feature
+Switched to branch 'my-feature'
+
+surbh@DESKTOP-UQB074A MINGW64 ~/Desktop/GIT_Ex9 (my-feature)
+$ git status
+On branch my-feature
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        about.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+surbh@DESKTOP-UQB074A MINGW64 ~/Desktop/GIT_Ex9 (my-feature)
+$ add .
+bash: add: command not found
+
+surbh@DESKTOP-UQB074A MINGW64 ~/Desktop/GIT_Ex9 (my-feature)
+$ git add.
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+        add
+
+surbh@DESKTOP-UQB074A MINGW64 ~/Desktop/GIT_Ex9 (my-feature)
+$ git add .
+
+surbh@DESKTOP-UQB074A MINGW64 ~/Desktop/GIT_Ex9 (my-feature)
+$ git commit "Commiting about.html and updated Index.html in my-feature branch"
+error: pathspec 'Commiting about.html and updated Index.html in my-feature branch' did not match any file(s) known to git
+
+surbh@DESKTOP-UQB074A MINGW64 ~/Desktop/GIT_Ex9 (my-feature)
+$ git commit -m "Commiting about.html and updated Index.html in my-feature branch"
+[my-feature f56ff4e] Commiting about.html and updated Index.html in my-feature branch
+ 2 files changed, 10 insertions(+)
+ create mode 100644 about.html
+
+surbh@DESKTOP-UQB074A MINGW64 ~/Desktop/GIT_Ex9 (my-feature)
+$ git checkout master
+Switched to branch 'master'
+
+surbh@DESKTOP-UQB074A MINGW64 ~/Desktop/GIT_Ex9 (master)
+$ ls
+index.html
+
+surbh@DESKTOP-UQB074A MINGW64 ~/Desktop/GIT_Ex9 (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+surbh@DESKTOP-UQB074A MINGW64 ~/Desktop/GIT_Ex9 (master)
+$ git add .
+
+surbh@DESKTOP-UQB074A MINGW64 ~/Desktop/GIT_Ex9 (master)
+$ git commit -m "Commiting updated index.html in master branch"
+[master b5789cd] Commiting updated index.html in master branch
+ 1 file changed, 1 insertion(+)
+
+surbh@DESKTOP-UQB074A MINGW64 ~/Desktop/GIT_Ex9 (master)
+$ git merge my-feature
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+
+surbh@DESKTOP-UQB074A MINGW64 ~/Desktop/GIT_Ex9 (master|MERGING)
+
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+        new file:   about.html
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        GITBash_commands.txt
+
+
+surbh@DESKTOP-UQB074A MINGW64 ~/Desktop/GIT_Ex9 (master|MERGING)
+$ git mergetool
+
+This message is displayed because 'merge.tool' is not configured.
+See 'git mergetool --tool-help' or 'git help config' for more details.
+'git mergetool' will now attempt to use one of the following tools:
+opendiff kdiff3 tkdiff xxdiff meld tortoisemerge gvimdiff diffuse diffmerge ecmerge p4merge araxis bc codecompare smerge emerge vimdiff nvimdiff
+Merging:
+index.html
+
+Normal merge conflict for 'index.html':
+  {local}: modified file
+  {remote}: modified file
+Hit return to start merge resolution tool (vimdiff):
+4 files to edit
+
+surbh@DESKTOP-UQB074A MINGW64 ~/Desktop/GIT_Ex9 (master|MERGING)
+$ git status
+On branch master
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+        new file:   about.html
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        GITBash_commands.txt
+        index.html.orig
+
+
+surbh@DESKTOP-UQB074A MINGW64 ~/Desktop/GIT_Ex9 (master|MERGING)
+$ git clean
+fatal: clean.requireForce defaults to true and neither -i, -n, nor -f given; refusing to clean
+
+surbh@DESKTOP-UQB074A MINGW64 ~/Desktop/GIT_Ex9 (master|MERGING)
+$ git clean --help
+
+surbh@DESKTOP-UQB074A MINGW64 ~/Desktop/GIT_Ex9 (master|MERGING)
+$ git clean -d
+fatal: clean.requireForce defaults to true and neither -i, -n, nor -f given; refusing to clean
+
+surbh@DESKTOP-UQB074A MINGW64 ~/Desktop/GIT_Ex9 (master|MERGING)
+$ git clean -i
+Would remove the following items:
+  GITBash_commands.txt  index.html.orig
+*** Commands ***
+    1: clean                2: filter by pattern    3: select by numbers
+    4: ask each             5: quit                 6: help
+What now> 4
+Remove GITBash_commands.txt [y/N]? N
+Remove index.html.orig [y/N]? y
+Removing index.html.orig
+
+surbh@DESKTOP-UQB074A MINGW64 ~/Desktop/GIT_Ex9 (master|MERGING)
+$
