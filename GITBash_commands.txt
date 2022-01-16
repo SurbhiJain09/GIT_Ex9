@@ -176,3 +176,26 @@ Removing index.html.orig
 
 surbh@DESKTOP-UQB074A MINGW64 ~/Desktop/GIT_Ex9 (master|MERGING)
 $
+surbh@DESKTOP-UQB074A MINGW64 ~/Desktop/GIT_Ex9 (master|MERGING)
+$ git add .
+
+surbh@DESKTOP-UQB074A MINGW64 ~/Desktop/GIT_Ex9 (master|MERGING)
+$ git commit -m "Commiting files after resolving the conflict issues"
+[master 3f18cd7] Commiting files after resolving the conflict issues
+
+surbh@DESKTOP-UQB074A MINGW64 ~/Desktop/GIT_Ex9 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+surbh@DESKTOP-UQB074A MINGW64 ~/Desktop/GIT_Ex9 (master)
+$ git push https://github.com/SurbhiJain09/GIT_Ex9.git
+Enumerating objects: 14, done.
+Counting objects: 100% (14/14), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (14/14), 2.75 KiB | 937.00 KiB/s, done.
+Total 14 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), done.
+To https://github.com/SurbhiJain09/GIT_Ex9.git
+ * [new branch]      master -> master
